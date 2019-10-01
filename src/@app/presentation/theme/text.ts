@@ -13,7 +13,7 @@ const TextBlockStyle = css`
   }
 `;
 
-const TextStyle = css`
+const textStyleMixin = css`
   font-size: ${text.size.paragraph};
   line-height: 1.5;
 `;
@@ -82,7 +82,7 @@ const headingStyles = css`
 export const globalTextStyles = css`
   p {
     ${TextBlockStyle}
-    ${TextStyle}
+    ${textStyleMixin}
   }
   ${headingStyles}
 `;
