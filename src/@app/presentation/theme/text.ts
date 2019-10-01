@@ -33,7 +33,7 @@ const headingStyles = css`
       font-size: 3.5rem;
     }
 
-    ${boldMixin}
+    ${boldWeightMixin}
   }
 
   h2 {
@@ -41,7 +41,7 @@ const headingStyles = css`
     @media (max-width: ${props => props.theme.mediaQueries.sizes.phoneLarge}) {
       font-size: 2.5rem;
     }
-    ${boldMixin};
+    ${boldWeightMixin};
   }
 
   h3 {
@@ -49,7 +49,7 @@ const headingStyles = css`
     @media (max-width: ${props => props.theme.mediaQueries.sizes.phoneLarge}) {
       font-size: 2rem;
     }
-    ${boldMixin};
+    ${boldWeightMixin};
   }
 
   h4 {
@@ -57,12 +57,12 @@ const headingStyles = css`
     @media (max-width: ${props => props.theme.mediaQueries.sizes.phoneLarge}) {
       font-size: 1.6rem;
     }
-    ${boldMixin};
+    ${boldWeightMixin};
   }
 
   h5 {
     font-size: 1.4rem;
-    ${boldMixin};
+    ${boldWeightMixin};
   }
 
   h6 {
