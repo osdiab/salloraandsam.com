@@ -32,6 +32,9 @@ const HeaderSubtitle = styled.h2`
 const TextLogo = styled(SvgTextLogo)`
   height: 2.2rem;
   padding: 0.15rem;
+  path {
+    fill: ${props => props.theme.palette.primary};
+  }
 `;
 
 export const Header: React.StatelessComponent<{}> = () => (
