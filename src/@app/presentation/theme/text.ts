@@ -18,8 +18,12 @@ const TextStyle = css`
   line-height: 1.5;
 `;
 
-const boldMixin = css`
-  font-weight: 700;
+export const normalWeightMixin = css`
+  font-weight: 400;
+`;
+
+export const boldWeightMixin = css`
+  font-weight: 600;
 `;
 
 const headingStyles = css`
