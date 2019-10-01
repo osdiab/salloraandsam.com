@@ -9,7 +9,7 @@ export const text = {
 
 const TextBlockStyle = css`
   :not(:last-child) {
-    margin-bottom: 1.2rem;
+    margin-bottom: ${text.size.paragraph};
   }
 `;
 
