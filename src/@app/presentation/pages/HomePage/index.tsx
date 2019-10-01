@@ -1,6 +1,5 @@
 import * as React from "react";
 import styled from "styled-components/macro";
-
 import {
   Button,
   ButtonRole,
@@ -43,9 +42,11 @@ const BannerSubtitle = styled.h2`
   ${normalWeightMixin}
 `;
 const Placeholder = styled.div`
-  width: 300px;
-  height: 300px;
-  flex-shrink: 0;
+  @media (min-width: ${props => props.theme.mediaQueries.sizes.tablet}) {
+    width: 300px;
+    height: 300px;
+    flex-shrink: 0;
+  }
 `;
 export class HomePage extends React.Component<{}> {
   public render() {
