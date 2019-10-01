@@ -14,7 +14,7 @@ const TextBlockStyle = css`
 `;
 
 const TextStyle = css`
-  font-size: 1.2rem;
+  font-size: ${text.size.paragraph};
   line-height: 1.5;
 `;
 
