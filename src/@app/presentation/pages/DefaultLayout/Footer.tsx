@@ -1,7 +1,7 @@
 import * as React from "react";
 import styled from "styled-components/macro";
 
-import { Link } from "@app/presentation/utility/Link";
+import { Link, LinkAppearance } from "@app/presentation/utility/Link";
 import { PageSection } from "@app/presentation/utility/mixins/PageSection";
 
 const InfoSection = styled.section`
@@ -27,8 +27,13 @@ export const Footer: React.StatelessComponent<{}> = () => (
     <ContactSection id="contact">
       <h5>
         Our restaurant is located at{" "}
-        <a href="https://goo.gl/maps/omREEh46EPqMcGkr9">8500 S Harlem Ave</a> in
-        Bridgeview, IL.
+        <Link
+          appearance={LinkAppearance.HYPERLINK}
+          to="https://goo.gl/maps/omREEh46EPqMcGkr9"
+        >
+          8500 S Harlem Ave
+        </Link>{" "}
+        in Bridgeview, IL.
       </h5>
       {/* <p>Our hours are as follows:</p>
       <ul>
