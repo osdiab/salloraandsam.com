@@ -3,6 +3,7 @@ import styled from "styled-components/macro";
 
 import { PageSection } from "@app/presentation/utility/mixins/PageSection";
 import { normalWeightMixin } from "@app/presentation/theme/text";
+import { TextLogo as SvgTextLogo } from "@app/presentation/svg/TextLogo";
 
 const HeaderElem = styled.header`
   ${PageSection}
@@ -28,10 +29,18 @@ const HeaderSubtitle = styled.h2`
   ${normalWeightMixin};
 `;
 
+const TextLogo = styled(SvgTextLogo)`
+  height: 2.2rem;
+  padding: 0.15rem;
+`;
+
 export const Header: React.StatelessComponent<{}> = () => (
   <HeaderElem>
     <HeaderRow>
       <HeaderTitle>Sallora & Sam</HeaderTitle>
+    </HeaderRow>
+    <HeaderRow>
+      <TextLogo />
     </HeaderRow>
     <HeaderRow>
       <HeaderSubtitle>pastry and catering</HeaderSubtitle>
