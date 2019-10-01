@@ -6,11 +6,14 @@ export const colors = {
   brighterOrange: "#ff7d50",
   paleOrange: "#f97e53",
   mediumGray: "#888888",
-  offBlack: "#2a2a2a"
+  offBlack: "#2a2a2a",
+
+  deepPurple: "#512c96",
+  paleDeepPurple: "#560764"
 };
 
 export const palette = {
-  primary: colors.brightOrange,
+  primary: colors.deepPurple,
   primaryHighlight: colors.paleOrange,
   background: colors.offWhite,
   disabled: colors.mediumGray,
