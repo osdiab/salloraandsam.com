@@ -7,6 +7,7 @@ import {
   ButtonTargetKind
 } from "@app/presentation/utility/Button";
 import { normalWeightMixin } from "@app/presentation/theme/text";
+import { spacingInRem } from "@app/presentation/theme/spacing";
 
 const BannerSection = styled.section`
   background-color: ${props => props.theme.palette.primary};
@@ -22,19 +23,30 @@ const BannerText = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
+  flex-basis: 700px;
+  flex-grow: 0;
+  flex-shrink: 1;
+
+  > *:not(:last-child) {
+    margin-bottom: ${spacingInRem.xl};
+  }
 `;
 const BannerTitle = styled.h1`
-  font-size: 2rem;
+  font-size: 3rem;
   color: ${props => props.theme.palette.whiteText};
-  ${normalWeightMixin};
+
+  ${normalWeightMixin}
 `;
 const BannerSubtitle = styled.h2`
-  font-size: 1.3rem;
+  font-size: 2rem;
   color: ${props => props.theme.palette.whiteText};
+
+  ${normalWeightMixin}
 `;
 const Placeholder = styled.div`
   width: 300px;
   height: 300px;
+  flex-shrink: 0;
 `;
 export class HomePage extends React.Component<{}> {
   public render() {
@@ -44,15 +56,18 @@ export class HomePage extends React.Component<{}> {
           <BannerSection>
             <Placeholder />
             <BannerText>
-              <BannerTitle>Fine Syrian pastries since 1873</BannerTitle>
+              <BannerTitle>
+                Fine Syrian pastries and cuisine since 1873
+              </BannerTitle>
               <BannerSubtitle>
-                Order catering for your next gathering
+                Dine in our store or cater authentic, delicious food from Hamah,
+                Syria at your next gathering
               </BannerSubtitle>
               <Button
                 role={ButtonRole.PRIMARY_INVERTED}
                 onClick={{ kind: ButtonTargetKind.LINK, action: "#contact" }}
               >
-                Get in touch
+                Call or visit us
               </Button>
             </BannerText>
           </BannerSection>
