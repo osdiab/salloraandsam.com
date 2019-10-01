@@ -14,8 +14,7 @@ const BannerSection = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: ${props => props.theme.spacingInRem.xxxl};
-  padding-bottom: ${props => props.theme.spacingInRem.xxxl};
+  padding: ${props => props.theme.spacingInRem.xxxl};
 `;
 
 const BannerText = styled.div`
