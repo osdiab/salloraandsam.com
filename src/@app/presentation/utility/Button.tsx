@@ -1,6 +1,5 @@
 import * as React from "react";
 import styled from "styled-components/macro";
-
 import { ThemeInterface } from "@app/presentation/theme";
 import { Link, LinkAppearance } from "@app/presentation/utility/Link";
 import { logger } from "@app/utility/logger";
@@ -14,6 +13,7 @@ export enum ButtonTargetKind {
 export enum ButtonRole {
   PRIMARY = "PRIMARY",
   SECONDARY = "SECONDARY",
+  PRIMARY_INVERTED = "PRIMARY_INVERTED",
   TEXT_ONLY = "TEXT_ONLY"
 }
 
@@ -55,6 +55,8 @@ function borderColor(params: {
     case ButtonRole.PRIMARY:
     case ButtonRole.SECONDARY:
       return focus ? theme.palette.primaryHighlight : theme.palette.primary;
+    case ButtonRole.PRIMARY_INVERTED:
+      return theme.palette.whiteText;
     case ButtonRole.TEXT_ONLY:
       return "transparent";
   }
@@ -69,6 +71,8 @@ function backgroundColor(params: {
   switch (role) {
     case ButtonRole.PRIMARY:
       return focus ? theme.palette.primaryHighlight : theme.palette.primary;
+    case ButtonRole.PRIMARY_INVERTED:
+      return theme.palette.whiteText;
     case ButtonRole.SECONDARY:
     case ButtonRole.TEXT_ONLY:
       return "transparent";
@@ -85,6 +89,7 @@ function fontColor(params: {
     case ButtonRole.PRIMARY:
       return theme.palette.whiteText;
     case ButtonRole.SECONDARY:
+    case ButtonRole.PRIMARY_INVERTED:
     case ButtonRole.TEXT_ONLY:
       return focus ? theme.palette.primaryHighlight : theme.palette.primary;
   }
@@ -111,6 +116,7 @@ const StyledButton = styled.button<StyledButtonProps>`
     background-color: ${props => backgroundColor({ ...props, focus: true })};
     color: ${props => fontColor({ ...props, focus: true })};
     cursor: ${props => (props.disabled ? "not-allowed" : "pointer")};
+    text-decoration: underline;
   }
 `;
 const StyledDivButton = StyledButton.withComponent(styled.div``);
