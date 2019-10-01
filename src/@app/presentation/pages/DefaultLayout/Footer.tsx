@@ -15,27 +15,32 @@ const ContactSection = styled.section`
   ${PageSection};
   padding-bottom: 2rem;
   align-self: flex-start;
+  text-align: center;
+
+  h5,
+  h6 {
+    font-size: ${props => props.theme.text.size.paragraph};
+  }
 `;
 export const Footer: React.StatelessComponent<{}> = () => (
   <footer>
     <ContactSection id="contact">
-      <h2>Get in touch</h2>
-      <p>
-        Feel free to{" "}
-        <Link to="mailto://hello@omardiab.com">shoot me an email</Link>
-        {" or "}
-        <Link to="https://linkedin.com/in/osdiab">check my LinkedIn</Link>.
-      </p>
+      <h5>
+        Our restaurant is located at{" "}
+        <a href="https://goo.gl/maps/omREEh46EPqMcGkr9">8500 S Harlem Ave</a> in
+        Bridgeview, IL.
+      </h5>
+      {/* <p>Our hours are as follows:</p>
+      <ul>
+        <li>Monday-Friday: 10am–9pm</li>
+        <li>Saturday: 10am–10pm</li>
+      </ul> */}
+
+      <h5>Call us to ask about catering or delivery.</h5>
+      <h6>(708) 581-4239</h6>
     </ContactSection>
     <InfoSection>
-      <p>
-        Like this site? Feel free to{" "}
-        <Link to="https://github.com/osdiab/osdiab.github.io/">
-          fork it on Github
-        </Link>{" "}
-        and make it your own.
-      </p>
-      <p>Omar Diab, {new Date().getFullYear()}</p>
+      <p>Sallora & Sam, {new Date().getFullYear()}</p>
     </InfoSection>
   </footer>
 );
