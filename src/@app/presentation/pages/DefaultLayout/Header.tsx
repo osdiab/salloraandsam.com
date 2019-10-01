@@ -9,6 +9,10 @@ const HeaderElem = styled.header`
   ${PageSection}
   margin-bottom: 0;
   border: 0;
+
+  > *:not(:last-child) {
+    margin-bottom: ${props => props.theme.spacingInRem.xs};
+  }
 `;
 const HeaderRow = styled.div`
   display: flex;
@@ -31,7 +35,6 @@ const HeaderSubtitle = styled.h2`
 
 const TextLogo = styled(SvgTextLogo)`
   height: 2.2rem;
-  padding: 0.15rem;
   path {
     fill: ${props => props.theme.palette.primary};
   }
