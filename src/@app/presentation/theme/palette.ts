@@ -9,12 +9,12 @@ export const colors = {
   offBlack: "#2a2a2a",
 
   deepPurple: "#512c96",
-  paleDeepPurple: "#560764"
+  paleDeepPurple: "#7356AB"
 };
 
 export const palette = {
   primary: colors.deepPurple,
-  primaryHighlight: colors.paleOrange,
+  primaryHighlight: colors.paleDeepPurple,
   background: colors.offWhite,
   disabled: colors.mediumGray,
   bodyText: colors.offBlack,
