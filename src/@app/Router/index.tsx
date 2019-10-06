@@ -6,11 +6,13 @@ import { BlogPost } from "@app/presentation/pages/BlogPost";
 import { HomePage } from "@app/presentation/pages/HomePage";
 import { NotFound } from "@app/presentation/pages/NotFound";
 import { DefaultLayoutRoute } from "@app/Router/DefaultLayoutRoute";
+import { MenuPage } from "@app/presentation/pages/Menu";
 
 export const Router: React.FC = () => (
   <BrowserRouter>
     <Switch>
       <DefaultLayoutRoute exact={true} path="/" component={HomePage} />
+      <DefaultLayoutRoute exact={true} path="/menu" component={MenuPage} />
       <DefaultLayoutRoute path="/blog/:blogPostId" component={BlogPost} />
       <DefaultLayoutRoute
         path="/components"
