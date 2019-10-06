@@ -7,7 +7,7 @@ import { HomePage } from "@app/presentation/pages/HomePage";
 import { NotFound } from "@app/presentation/pages/NotFound";
 import { DefaultLayoutRoute } from "@app/Router/DefaultLayoutRoute";
 
-export const Router: React.StatelessComponent<{}> = () => (
+export const Router: React.FC = () => (
   <BrowserRouter>
     <Switch>
       <DefaultLayoutRoute exact={true} path="/" component={HomePage} />

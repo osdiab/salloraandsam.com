@@ -1,5 +1,6 @@
 import * as React from "react";
 import styled from "styled-components/macro";
+
 import { ThemeInterface } from "@app/presentation/theme";
 import { Link, LinkAppearance } from "@app/presentation/utility/Link";
 import { logger } from "@app/utility/logger";
@@ -146,7 +147,7 @@ function buttonFontSize(size: ButtonProps["size"]) {
   }
 }
 
-export const Button: React.StatelessComponent<ButtonProps> = props => {
+export const Button: React.FC<ButtonProps> = props => {
   const {
     onClick,
     size = ButtonSize.MEDIUM,

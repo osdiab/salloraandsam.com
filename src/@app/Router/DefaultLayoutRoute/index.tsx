@@ -14,7 +14,7 @@ function createRender(
     );
   };
 }
-export const DefaultLayoutRoute: React.StatelessComponent<RouteProps> = ({
+export const DefaultLayoutRoute: React.FC<RouteProps> = ({
   component,
   ...rest
 }) => {

@@ -49,31 +49,25 @@ const Placeholder = styled.div`
     flex-shrink: 0;
   }
 `;
-export class HomePage extends React.Component<{}> {
-  public render() {
-    return (
-      <>
-        <main>
-          <BannerSection>
-            <Placeholder />
-            <BannerText>
-              <BannerTitle>
-                Fine Syrian pastries and cuisine since 1873
-              </BannerTitle>
-              <BannerSubtitle>
-                Dine in our store or cater authentic, delicious food from Hamah,
-                Syria at your next gathering
-              </BannerSubtitle>
-              <Button
-                role={ButtonRole.PRIMARY_INVERTED}
-                onClick={{ kind: ButtonTargetKind.LINK, action: "#contact" }}
-              >
-                Call or visit us
-              </Button>
-            </BannerText>
-          </BannerSection>
-        </main>
-      </>
-    );
-  }
-}
+export const HomePage: React.FC = () => (
+  <>
+    <main>
+      <BannerSection>
+        <Placeholder />
+        <BannerText>
+          <BannerTitle>Fine Syrian pastries and cuisine since 1873</BannerTitle>
+          <BannerSubtitle>
+            Dine in our store or cater authentic, delicious food from Hamah,
+            Syria at your next gathering
+          </BannerSubtitle>
+          <Button
+            role={ButtonRole.PRIMARY_INVERTED}
+            onClick={{ kind: ButtonTargetKind.LINK, action: "#contact" }}
+          >
+            Call or visit us
+          </Button>
+        </BannerText>
+      </BannerSection>
+    </main>
+  </>
+);

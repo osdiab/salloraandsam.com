@@ -43,11 +43,7 @@ function logInvalidAppearance(appearance: never) {
   );
 }
 
-const AbsoluteLink: React.StatelessComponent<LinkProps> = ({
-  to,
-  appearance,
-  children
-}) => {
+const AbsoluteLink: React.FC<LinkProps> = ({ to, appearance, children }) => {
   const props = { href: to, children };
   switch (appearance) {
     default:
@@ -61,11 +57,7 @@ const AbsoluteLink: React.StatelessComponent<LinkProps> = ({
   }
 };
 
-const RelativeLink: React.StatelessComponent<LinkProps> = ({
-  to,
-  appearance,
-  children
-}) => {
+const RelativeLink: React.FC<LinkProps> = ({ to, appearance, children }) => {
   const linkProps: RouterLinkProps = {
     children,
     smooth: true,
@@ -86,7 +78,7 @@ const RelativeLink: React.StatelessComponent<LinkProps> = ({
 /**
  * A link to external content.
  */
-export const Link: React.StatelessComponent<LinkProps> = props => {
+export const Link: React.FC<LinkProps> = props => {
   return isRelativeUrl(props.to) ? (
     <RelativeLink {...props} />
   ) : (

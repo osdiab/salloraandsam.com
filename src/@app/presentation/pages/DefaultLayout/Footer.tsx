@@ -22,7 +22,7 @@ const ContactSection = styled.section`
     font-size: ${props => props.theme.text.size.paragraph};
   }
 `;
-export const Footer: React.StatelessComponent<{}> = () => (
+export const Footer: React.FC = () => (
   <footer>
     <ContactSection id="contact">
       <h5>

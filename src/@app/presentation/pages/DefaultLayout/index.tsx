@@ -10,7 +10,7 @@ const PageContainer = styled.div`
   font-size: ${props => props.theme.text.size.paragraph};
 `;
 
-export const DefaultLayout: React.StatelessComponent<{}> = ({ children }) => {
+export const DefaultLayout: React.FC = ({ children }) => {
   return (
     <PageContainer>
       <GlobalStyle />

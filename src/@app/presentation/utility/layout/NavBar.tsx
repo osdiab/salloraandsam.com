@@ -32,7 +32,7 @@ const NavList = styled.ul`
   }
 `;
 
-export const NavBar: React.StatelessComponent<NavBarProps> = ({ entries }) => {
+export const NavBar: React.FC<NavBarProps> = ({ entries }) => {
   return (
     <NavElem>
       <NavList>

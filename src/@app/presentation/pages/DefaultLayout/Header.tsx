@@ -40,7 +40,7 @@ const TextLogo = styled(SvgTextLogo)`
   }
 `;
 
-export const Header: React.StatelessComponent<{}> = () => (
+export const Header: React.FC = () => (
   <HeaderElem>
     <HeaderRow>
       <HeaderTitle>Sallora & Sam</HeaderTitle>
