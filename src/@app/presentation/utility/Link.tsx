@@ -17,8 +17,9 @@ export enum LinkAppearance {
 }
 
 export interface LinkProps {
-  to: string;
+  href: string;
   appearance?: LinkAppearance;
+  forceExternal?: boolean;
 }
 
 const HyperlinkA = styled.a`
@@ -43,7 +44,11 @@ function logInvalidAppearance(appearance: never) {
   );
 }
 
-const AbsoluteLink: React.FC<LinkProps> = ({ to, appearance, children }) => {
+const AbsoluteLink: React.FC<LinkProps> = ({
+  href: to,
+  appearance,
+  children
+}) => {
   const props = { href: to, children };
   switch (appearance) {
     default:
@@ -57,11 +62,11 @@ const AbsoluteLink: React.FC<LinkProps> = ({ to, appearance, children }) => {
   }
 };
 
-const RelativeLink: React.FC<LinkProps> = ({ to, appearance, children }) => {
+const RelativeLink: React.FC<LinkProps> = ({ href, appearance, children }) => {
   const linkProps: RouterLinkProps = {
     children,
     smooth: true,
-    to
+    to: href
   };
   switch (appearance) {
     default:
@@ -79,7 +84,7 @@ const RelativeLink: React.FC<LinkProps> = ({ to, appearance, children }) => {
  * A link to external content.
  */
 export const Link: React.FC<LinkProps> = props => {
-  return isRelativeUrl(props.to) ? (
+  return isRelativeUrl(props.href) && !props.forceExternal ? (
     <RelativeLink {...props} />
   ) : (
     <AbsoluteLink {...props} />

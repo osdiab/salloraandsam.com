@@ -2,7 +2,11 @@ import * as React from "react";
 import styled from "styled-components/macro";
 
 import { ThemeInterface } from "@app/presentation/theme";
-import { Link, LinkAppearance } from "@app/presentation/utility/Link";
+import {
+  Link,
+  LinkAppearance,
+  LinkProps
+} from "@app/presentation/utility/Link";
 import { logger } from "@app/utility/logger";
 
 export enum ButtonTargetKind {
@@ -30,7 +34,7 @@ export interface OnClickShape<Kind extends ButtonTargetKind, action> {
 }
 
 export type OnClick =
-  | OnClickShape<ButtonTargetKind.LINK, string>
+  | OnClickShape<ButtonTargetKind.LINK, Omit<LinkProps, "children">>
   | OnClickShape<ButtonTargetKind.FUNCTION, () => void>
   | OnClickShape<ButtonTargetKind.SUBMIT, undefined>;
 
@@ -168,7 +172,11 @@ export const Button: React.FC<ButtonProps> = props => {
       }
 
       return (
-        <Link appearance={LinkAppearance.UNSTYLED} to={onClick.action}>
+        <Link
+          appearance={LinkAppearance.UNSTYLED}
+          href={onClick.action.href}
+          forceExternal={onClick.action.forceExternal || false}
+        >
           {linkContent}
         </Link>
       );
