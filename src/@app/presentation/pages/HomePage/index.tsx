@@ -8,28 +8,43 @@ import {
 } from "@app/presentation/utility/Button";
 import { normalWeightMixin } from "@app/presentation/theme/text";
 import { spacingInRem } from "@app/presentation/theme/spacing";
+import { phoneNumber } from "@app/presentation/data";
 
-const BannerSection = styled.section`
+const Main = styled.main`
+  > *:not(:last-child) {
+    margin-bottom: ${props => props.theme.spacingInRem.l};
+  }
+`;
+
+const Section = styled.section`
+  padding: ${props => props.theme.spacingInRem.xxxl};
+`;
+const SectionContent = styled.main`
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+`;
+
+const BannerSection = styled(Section)`
   background-color: ${props => props.theme.palette.primary};
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: ${props => props.theme.spacingInRem.xxxl};
 `;
 
-const BannerText = styled.div`
+const BannerContent = styled(SectionContent)`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-  flex-basis: 700px;
-  flex-grow: 0;
-  flex-shrink: 1;
-
   > *:not(:last-child) {
     margin-bottom: ${spacingInRem.xl};
   }
+  @media (min-width: ${props => props.theme.mediaQueries.sizes.tablet}) {
+    padding-left: 300px;
+  }
 `;
+
 const BannerTitle = styled.h1`
   font-size: 3rem;
   color: ${props => props.theme.palette.whiteText};
@@ -42,32 +57,75 @@ const BannerSubtitle = styled.h2`
 
   ${normalWeightMixin}
 `;
-const Placeholder = styled.div`
-  @media (min-width: ${props => props.theme.mediaQueries.sizes.tablet}) {
-    width: 300px;
-    height: 300px;
-    flex-shrink: 0;
+const HighlightText = styled.span`
+  color: ${props => props.theme.palette.primary};
+`;
+const BannerActions = styled.section`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  > *:not(:last-child) {
+    margin-right: ${props => props.theme.spacingInRem.s};
   }
 `;
+
 export const HomePage: React.FC = () => (
   <>
-    <main>
+    <Main>
       <BannerSection>
-        <Placeholder />
-        <BannerText>
-          <BannerTitle>Fine Syrian pastries and cuisine since 1873</BannerTitle>
+        <BannerContent>
+          <BannerTitle>Fine Syrian pastries and cuisine since 1870</BannerTitle>
           <BannerSubtitle>
-            Dine in our store or cater authentic, delicious food from Hamah,
-            Syria at your next gathering
+            Dine in our restaurant or cater the authentic, delicious cuisine of
+            Hamah, Syria at your next gathering
           </BannerSubtitle>
-          <Button
-            role={ButtonRole.PRIMARY_INVERTED}
-            onClick={{ kind: ButtonTargetKind.LINK, action: "#contact" }}
-          >
-            Call or visit us
-          </Button>
-        </BannerText>
+          <BannerActions>
+            <Button
+              role={ButtonRole.PRIMARY_INVERTED}
+              onClick={{ kind: ButtonTargetKind.LINK, action: "#cater" }}
+            >
+              Cater an event
+            </Button>
+            <Button
+              role={ButtonRole.PRIMARY_INVERTED}
+              onClick={{ kind: ButtonTargetKind.LINK, action: "#cater" }}
+            >
+              Visit our restauran
+            </Button>
+          </BannerActions>
+        </BannerContent>
       </BannerSection>
-    </main>
+      <Section id="food">
+        <SectionContent>
+          <h2>The heritage of Syria</h2>
+        </SectionContent>
+      </Section>
+      <Section id="store">
+        <SectionContent>
+          <h2>Join us for dinner</h2>
+          <h3>Interested in catering an event?</h3>
+          <Button
+            role={ButtonRole.PRIMARY}
+            onClick={{ kind: ButtonTargetKind.LINK, action: "#cater" }}
+          >
+            Learn more
+          </Button>
+        </SectionContent>
+      </Section>
+      <Section id="cater">
+        <SectionContent>
+          <h2>Make your gathering special</h2>
+          <p>
+            Amer Sallora and his dedicated team will bring the culinary spark to
+            delight guests at your next event.
+          </p>
+          <p>
+            Call us at <HighlightText>{phoneNumber}</HighlightText> to plan and
+            schedule delivery. We are excited to take responsibility for the
+            success of your event.
+          </p>
+        </SectionContent>
+      </Section>
+    </Main>
   </>
 );
