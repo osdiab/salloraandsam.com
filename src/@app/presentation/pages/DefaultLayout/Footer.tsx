@@ -5,6 +5,10 @@ import { Link, LinkAppearance } from "@app/presentation/utility/Link";
 import { PageSection } from "@app/presentation/utility/mixins/PageSection";
 import { phoneNumber } from "@app/presentation/data";
 
+const FooterElem = styled.footer`
+  background-color: ${props => props.theme.palette.grayBackground};
+`;
+
 const InfoSection = styled.section`
   display: flex;
   flex-direction: column;
@@ -24,7 +28,7 @@ const ContactSection = styled.section`
   }
 `;
 export const Footer: React.FC = () => (
-  <footer>
+  <FooterElem>
     <ContactSection id="contact">
       <h5>
         Our restaurant is located at{" "}
@@ -48,5 +52,5 @@ export const Footer: React.FC = () => (
     <InfoSection>
       <p>Sallora & Sam, {new Date().getFullYear()}</p>
     </InfoSection>
-  </footer>
+  </FooterElem>
 );
