@@ -80,6 +80,8 @@ const headingStyles = css`
 `;
 
 export const globalTextStyles = css`
+  @import url("https://fonts.googleapis.com/css?family=EB+Garamond:400,600&display=swap");
+
   p {
     ${TextBlockStyle}
     ${textStyleMixin}
