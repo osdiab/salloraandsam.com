@@ -108,7 +108,7 @@ export const HomePage: React.FC = () => (
             onClick={{
               kind: ButtonTargetKind.LINK,
               action: {
-                href: "/2019-10-12-menu.pdf",
+                href: "/menu.pdf",
                 forceExternal: true
               }
             }}
