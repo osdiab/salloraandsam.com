@@ -6,7 +6,7 @@ import { PageSection } from "@app/presentation/utility/mixins/PageSection";
 
 export interface NavBarEntry {
   displayText: string;
-  to: string;
+  href: string;
 }
 export interface NavBarProps {
   entries: NavBarEntry[];
@@ -36,9 +36,9 @@ export const NavBar: React.FC<NavBarProps> = ({ entries }) => {
   return (
     <NavElem>
       <NavList>
-        {entries.map(({ displayText, to }, index) => (
+        {entries.map(({ displayText, href }, index) => (
           <li key={index}>
-            <Link to={to}>{displayText}</Link>
+            <Link href={href}>{displayText}</Link>
           </li>
         ))}
       </NavList>

@@ -30,7 +30,7 @@ export const Footer: React.FC = () => (
         Our restaurant is located at{" "}
         <Link
           appearance={LinkAppearance.HYPERLINK}
-          to="https://goo.gl/maps/omREEh46EPqMcGkr9"
+          href="https://goo.gl/maps/omREEh46EPqMcGkr9"
         >
           8500 S Harlem Ave
         </Link>{" "}

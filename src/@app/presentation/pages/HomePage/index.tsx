@@ -9,7 +9,6 @@ import {
 import { normalWeightMixin } from "@app/presentation/theme/text";
 import { spacingInRem } from "@app/presentation/theme/spacing";
 import { phoneNumber } from "@app/presentation/data";
-import { Link } from "@app/presentation/utility/Link";
 
 const Section = styled.section`
   padding: ${props => props.theme.spacingInRem.m};
