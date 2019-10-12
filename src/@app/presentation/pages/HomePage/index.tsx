@@ -19,7 +19,7 @@ const Main = styled.main`
 const Section = styled.section`
   padding: ${props => props.theme.spacingInRem.xxxl};
 `;
-const SectionContent = styled.main`
+const SectionContent = styled.div`
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
