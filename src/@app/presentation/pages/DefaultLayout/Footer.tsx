@@ -3,6 +3,7 @@ import styled from "styled-components/macro";
 
 import { Link, LinkAppearance } from "@app/presentation/utility/Link";
 import { PageSection } from "@app/presentation/utility/mixins/PageSection";
+import { phoneNumber } from "@app/presentation/data";
 
 const InfoSection = styled.section`
   display: flex;
@@ -42,7 +43,7 @@ export const Footer: React.FC = () => (
       </ul> */}
 
       <h5>Call us to ask about catering or delivery.</h5>
-      <h6>(708) 581-4239</h6>
+      <h6>{phoneNumber}</h6>
     </ContactSection>
     <InfoSection>
       <p>Sallora & Sam, {new Date().getFullYear()}</p>
