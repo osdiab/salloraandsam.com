@@ -10,12 +10,6 @@ import { normalWeightMixin } from "@app/presentation/theme/text";
 import { spacingInRem } from "@app/presentation/theme/spacing";
 import { phoneNumber } from "@app/presentation/data";
 
-const Main = styled.main`
-  > *:not(:last-child) {
-    margin-bottom: ${props => props.theme.spacingInRem.l};
-  }
-`;
-
 const Section = styled.section`
   padding: ${props => props.theme.spacingInRem.xxxl};
 `;
@@ -71,7 +65,7 @@ const BannerActions = styled.section`
 
 export const HomePage: React.FC = () => (
   <>
-    <Main>
+    <main>
       <BannerSection>
         <BannerContent>
           <BannerTitle>Fine Syrian pastries and cuisine since 1870</BannerTitle>
@@ -126,6 +120,6 @@ export const HomePage: React.FC = () => (
           </p>
         </SectionContent>
       </Section>
-    </Main>
+    </main>
   </>
 );
