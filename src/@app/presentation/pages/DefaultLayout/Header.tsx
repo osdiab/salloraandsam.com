@@ -21,7 +21,7 @@ const HeaderElem = styled.header`
 `;
 
 const TextLogoEnglish = styled(SvgTextLogoEnglish)`
-  height: 1.8rem;
+  height: 2rem;
   path {
     fill: ${props => props.theme.palette.primary};
   }
@@ -34,21 +34,28 @@ const ArabicLogo = styled.div`
 `;
 
 const TextLogoArabic = styled(SvgTextLogoArabic)`
-  height: 2.2rem;
+  height: 2.4rem;
   path {
     fill: ${props => props.theme.palette.primary};
   }
 `;
 
 const SweetsShopArabic = styled(SvgSweetsShopArabic)`
-  height: 1rem;
+  height: 1.4rem;
   path {
     fill: ${props => props.theme.palette.bodyText};
   }
-  margin-bottom: -0.5rem; /* tuning spacing */
+  margin-bottom: -1rem; /* tuning spacing */
+  @media (min-width: ${props => props.theme.mediaQueries.sizes.tablet}) {
+    margin-bottom: -0.4rem;
+  }
 `;
 const HeaderSubtitle = styled(SvgHeaderSubtitle)`
-  height: 1.4rem;
+  display: none;
+  @media (min-width: ${props => props.theme.mediaQueries.sizes.tablet}) {
+    display: block;
+    height: 1.6rem;
+  }
 `;
 
 export const Header: React.FC = () => (
