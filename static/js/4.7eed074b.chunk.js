@@ -1,0 +1,2 @@
+(window["webpackJsonpsalloraandsam.com"]=window["webpackJsonpsalloraandsam.com"]||[]).push([[4],{47:function(a,n,o){"use strict";o.r(n);var e=o(0),s=o.n(e);n.default=function(){return s.a.createElement("main",null)}}}]);
+//# sourceMappingURL=4.7eed074b.chunk.js.map

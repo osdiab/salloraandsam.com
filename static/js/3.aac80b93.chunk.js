@@ -1,0 +1,2 @@
+(window["webpackJsonpsalloraandsam.com"]=window["webpackJsonpsalloraandsam.com"]||[]).push([[3],{48:function(a,n,e){"use strict";e.r(n);var l=e(0),t=e.n(l);n.default=function(){return t.a.createElement("article",null,t.a.createElement("h1",null,"Hi"))}}}]);
+//# sourceMappingURL=3.aac80b93.chunk.js.map
