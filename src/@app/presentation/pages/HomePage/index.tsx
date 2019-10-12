@@ -9,9 +9,14 @@ import {
 import { normalWeightMixin } from "@app/presentation/theme/text";
 import { spacingInRem } from "@app/presentation/theme/spacing";
 import { phoneNumber } from "@app/presentation/data";
+import { Link } from "@app/presentation/utility/Link";
 
 const Section = styled.section`
-  padding: ${props => props.theme.spacingInRem.xxxl};
+  padding: ${props => props.theme.spacingInRem.m};
+
+  @media (min-width: ${props => props.theme.mediaQueries.sizes.tablet}) {
+    padding: ${props => props.theme.spacingInRem.xxxl};
+  }
 `;
 const SectionContent = styled.div`
   max-width: 800px;
@@ -76,15 +81,21 @@ export const HomePage: React.FC = () => (
           <BannerActions>
             <Button
               role={ButtonRole.PRIMARY_INVERTED}
-              onClick={{ kind: ButtonTargetKind.LINK, action: "#cater" }}
+              onClick={{
+                kind: ButtonTargetKind.LINK,
+                action: { href: "#restaurant" }
+              }}
             >
-              Cater an event
+              Visit our restaurant
             </Button>
             <Button
               role={ButtonRole.PRIMARY_INVERTED}
-              onClick={{ kind: ButtonTargetKind.LINK, action: "#cater" }}
+              onClick={{
+                kind: ButtonTargetKind.LINK,
+                action: { href: "#cater" }
+              }}
             >
-              Visit our restauran
+              Cater an event
             </Button>
           </BannerActions>
         </BannerContent>
@@ -92,15 +103,31 @@ export const HomePage: React.FC = () => (
       <Section id="food">
         <SectionContent>
           <h2>The heritage of Syria</h2>
-        </SectionContent>
-      </Section>
-      <Section id="store">
-        <SectionContent>
-          <h2>Join us for dinner</h2>
-          <h3>Interested in catering an event?</h3>
+          <p></p>
           <Button
             role={ButtonRole.PRIMARY}
-            onClick={{ kind: ButtonTargetKind.LINK, action: "#cater" }}
+            onClick={{
+              kind: ButtonTargetKind.LINK,
+              action: {
+                href: "/2019-10-12-menu.pdf",
+                forceExternal: true
+              }
+            }}
+          >
+            Check out our menu
+          </Button>
+        </SectionContent>
+      </Section>
+      <Section id="restaurant">
+        <SectionContent>
+          <h2>Join us for dinner</h2>
+          <h4>Interested in catering an event?</h4>
+          <Button
+            role={ButtonRole.SECONDARY}
+            onClick={{
+              kind: ButtonTargetKind.LINK,
+              action: { href: "#cater" }
+            }}
           >
             Learn more
           </Button>
