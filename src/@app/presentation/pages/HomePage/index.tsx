@@ -72,10 +72,12 @@ export const HomePage: React.FC = () => (
     <main>
       <BannerSection>
         <BannerContent>
-          <BannerTitle>Fine Syrian pastries and cuisine since 1870</BannerTitle>
+          <BannerTitle>
+            Authentic Syrian and Mediterranean Cuisine Since 1870
+          </BannerTitle>
           <BannerSubtitle>
-            Dine in our restaurant or cater the authentic, delicious cuisine of
-            Hamah, Syria at your next gathering
+            Dine in our restaurant or cater our homemade specialties at your
+            next gathering
           </BannerSubtitle>
           <BannerActions>
             <Button
