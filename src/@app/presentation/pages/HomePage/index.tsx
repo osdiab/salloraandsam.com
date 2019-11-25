@@ -49,12 +49,6 @@ const BannerTitle = styled.h1`
 
   ${normalWeightMixin}
 `;
-const BannerSubtitle = styled.h2`
-  font-size: 2rem;
-  color: ${props => props.theme.palette.whiteText};
-
-  ${normalWeightMixin}
-`;
 const HighlightText = styled.span`
   color: ${props => props.theme.palette.primary};
 `;
@@ -67,18 +61,18 @@ const BannerActions = styled.section`
   }
 `;
 
+const ComingSoon = styled.h1`
+  text-align: center;
+`;
 export const HomePage: React.FC = () => (
   <>
     <main>
+      <ComingSoon>Great food coming soon!</ComingSoon>
       <BannerSection>
         <BannerContent>
           <BannerTitle>
             Authentic Syrian and Mediterranean Cuisine Since 1870
           </BannerTitle>
-          <BannerSubtitle>
-            Dine in our restaurant or cater our homemade specialties at your
-            next gathering
-          </BannerSubtitle>
           <BannerActions>
             <Button
               role={ButtonRole.PRIMARY_INVERTED}
@@ -87,7 +81,7 @@ export const HomePage: React.FC = () => (
                 action: { href: "#restaurant" }
               }}
             >
-              Visit our restaurant
+              Visit our restaurant in Bridgeview
             </Button>
             <Button
               role={ButtonRole.PRIMARY_INVERTED}
@@ -96,7 +90,7 @@ export const HomePage: React.FC = () => (
                 action: { href: "#cater" }
               }}
             >
-              Cater an event
+              Cater your next gathering
             </Button>
           </BannerActions>
         </BannerContent>
@@ -105,6 +99,15 @@ export const HomePage: React.FC = () => (
         <SectionContent>
           <h2>The heritage of Syria</h2>
           <p></p>
+        </SectionContent>
+      </Section>
+      <Section id="restaurant">
+        <SectionContent>
+          <h2>Join us for dinner</h2>
+          <p>
+            Come to our restaurant conveniently located in Bridgeview and
+            experience the Sallora legacy.
+          </p>
           <Button
             role={ButtonRole.PRIMARY}
             onClick={{
@@ -117,11 +120,6 @@ export const HomePage: React.FC = () => (
           >
             Check out our menu
           </Button>
-        </SectionContent>
-      </Section>
-      <Section id="restaurant">
-        <SectionContent>
-          <h2>Join us for dinner</h2>
           <h4>Interested in catering an event?</h4>
           <Button
             role={ButtonRole.SECONDARY}
