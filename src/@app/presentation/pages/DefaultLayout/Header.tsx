@@ -18,8 +18,11 @@ const HeaderElem = styled.header`
 `;
 
 const FullLogo = styled(FullLogoOrig)`
-  height: 8rem;
-  max-width: 80vw;
+  width: 100%;
+
+  @media (min-width: ${props => props.theme.mediaQueries.sizes.phoneLarge}) {
+    width: 18rem;
+  }
 `;
 
 export const Header: React.FC = () => (
