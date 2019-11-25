@@ -113,6 +113,7 @@ const StyledButton = styled.button<StyledButtonProps>`
   color: ${props => fontColor({ ...props, focus: false })};
   transition: background-color 0.1s ease-in, border-color 0.1s ease-in,
     color 0.1s ease-in;
+  text-align: center;
 
   :hover,
   :focus,
