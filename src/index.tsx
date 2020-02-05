@@ -1,21 +1,16 @@
-import {
-  getState as getLoadableState,
-  loadComponents
-} from "loadable-components";
 import * as React from "react";
 import { hydrate, render } from "react-dom";
 
 import { App } from "@app/App";
 
 async function startApp() {
-  const rootElement = document.getElementById("reactRoot") as HTMLElement;
+  const rootElement = document.getElementById("reactRoot");
 
-  const snapSaveState = () => getLoadableState();
-  (window as typeof window & {
-    snapSaveState: typeof snapSaveState;
-  }).snapSaveState = snapSaveState;
+  if (!rootElement) {
+    alert("Something went wrong, please try again soon");
+    return;
+  }
   if (rootElement.hasChildNodes()) {
-    await loadComponents();
     hydrate(<App />, rootElement);
   } else {
     render(<App />, rootElement);
