@@ -1,0 +1,186 @@
+%!Adobe-FontList 1.20
+%Locale:0x409
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Montserrat-Medium
+FamilyName:Montserrat
+StyleName:Medium
+MenuName:Montserrat Medium
+StyleBits:0
+WeightClass:500
+WidthClass:5
+AngleClass:0
+FullName:Montserrat Medium
+WritingScript:Roman
+OutlineFileName:/Users/omardiab/Downloads/2020-02-01 menu update/Document fonts/Montserrat-Medium.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:260236
+FileModTime:601790766
+NameArray:0,Mac,4,Montserrat Medium
+NameArray:0,Win,1,Montserrat Medium
+NameArray:0,Win,16,Montserrat
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Invalid
+OutlineFileName:/Users/omardiab/Downloads/2020-02-01 menu update/Document fonts/AdobeFnt20.lst
+FileLength:4176
+FileModTime:601790766
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Invalid
+OutlineFileName:/Users/omardiab/Downloads/2020-02-01 menu update/Document fonts/AdobeFnt21.lst
+FileLength:4171
+FileModTime:602235025
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Tajawal-Bold
+FamilyName:Tajawal
+StyleName:Bold
+MenuName:Tajawal
+StyleBits:2
+WeightClass:700
+WidthClass:5
+AngleClass:0
+FullName:Tajawal-Bold
+FamilyNameNative:
+StyleNameNative:Bold
+FullNameNative:
+WritingScript:Arabic
+OutlineFileName:/Users/omardiab/Downloads/2020-02-01 menu update/Document fonts/Tajawal-Bold.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:56568
+FileModTime:601790766
+NameArray:0,Win,1,Tajawal
+NameArray:0,Win,16,Tajawal
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Montserrat-Bold
+FamilyName:Montserrat
+StyleName:Bold
+MenuName:Montserrat
+StyleBits:2
+WeightClass:700
+WidthClass:5
+AngleClass:0
+FullName:Montserrat Bold
+WritingScript:Roman
+OutlineFileName:/Users/omardiab/Downloads/2020-02-01 menu update/Document fonts/Montserrat-Bold.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:261588
+FileModTime:601790766
+NameArray:0,Mac,4,Montserrat Bold
+NameArray:0,Win,1,Montserrat
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Tajawal-Medium
+FamilyName:Tajawal
+StyleName:Medium
+MenuName:Tajawal Medium
+StyleBits:0
+WeightClass:500
+WidthClass:5
+AngleClass:0
+FullName:Tajawal-Medium
+FamilyNameNative:
+StyleNameNative:Medium
+FullNameNative:
+WritingScript:Arabic
+OutlineFileName:/Users/omardiab/Downloads/2020-02-01 menu update/Document fonts/Tajawal-Medium.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:57360
+FileModTime:601790766
+NameArray:0,Win,1,Tajawal Medium
+NameArray:0,Win,16,Tajawal
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Montserrat-Italic
+FamilyName:Montserrat
+StyleName:Italic
+MenuName:Montserrat
+StyleBits:1
+WeightClass:400
+WidthClass:5
+AngleClass:1
+FullName:Montserrat Italic
+WritingScript:Roman
+OutlineFileName:/Users/omardiab/Downloads/2020-02-01 menu update/Document fonts/Montserrat-RegularItalic.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:249088
+FileModTime:601790766
+NameArray:0,Win,1,Montserrat
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Montserrat-SemiBold
+FamilyName:Montserrat
+StyleName:SemiBold
+MenuName:Montserrat SemiBold
+StyleBits:0
+WeightClass:600
+WidthClass:5
+AngleClass:0
+FullName:Montserrat SemiBold
+WritingScript:Roman
+OutlineFileName:/Users/omardiab/Downloads/2020-02-01 menu update/Document fonts/Montserrat-SemiBold.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:260936
+FileModTime:601790766
+NameArray:0,Mac,4,Montserrat SemiBold
+NameArray:0,Win,1,Montserrat SemiBold
+NameArray:0,Win,16,Montserrat
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Montserrat-Regular
+FamilyName:Montserrat
+StyleName:Regular
+MenuName:Montserrat
+StyleBits:0
+WeightClass:400
+WidthClass:5
+AngleClass:0
+FullName:Montserrat Regular
+WritingScript:Roman
+OutlineFileName:/Users/omardiab/Downloads/2020-02-01 menu update/Document fonts/Montserrat-Regular.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:245708
+FileModTime:601790766
+NameArray:0,Win,1,Montserrat
+%EndFont
+
