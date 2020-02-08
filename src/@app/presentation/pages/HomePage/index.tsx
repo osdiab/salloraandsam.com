@@ -21,6 +21,9 @@ const SectionContent = styled.div`
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
+  > *:not(:last-child) {
+    margin-bottom: ${spacingInRem.m};
+  }
 `;
 
 const BannerSection = styled(Section)`
@@ -40,6 +43,12 @@ const BannerContent = styled(SectionContent)`
   }
   @media (min-width: ${props => props.theme.mediaQueries.sizes.tablet}) {
     padding-left: 300px;
+  }
+`;
+
+const MenusGroup = styled.section`
+  > *:not(:last-child) {
+    margin-right: ${spacingInRem.s};
   }
 `;
 
@@ -108,18 +117,33 @@ export const HomePage: React.FC = () => (
             Come to our restaurant conveniently located in Bridgeview and
             experience the Sallora legacy.
           </p>
-          <Button
-            role={ButtonRole.PRIMARY}
-            onClick={{
-              kind: ButtonTargetKind.LINK,
-              action: {
-                href: "/menu.pdf",
-                forceExternal: true
-              }
-            }}
-          >
-            Check out our menu
-          </Button>
+          <h3>Check out our menus</h3>
+          <MenusGroup>
+            <Button
+              role={ButtonRole.PRIMARY}
+              onClick={{
+                kind: ButtonTargetKind.LINK,
+                action: {
+                  href: "/menu/main.pdf",
+                  forceExternal: true
+                }
+              }}
+            >
+              Restaurant Menu
+            </Button>
+            <Button
+              role={ButtonRole.PRIMARY}
+              onClick={{
+                kind: ButtonTargetKind.LINK,
+                action: {
+                  href: "/menu/desserts.pdf",
+                  forceExternal: true
+                }
+              }}
+            >
+              Dessert Menu
+            </Button>
+          </MenusGroup>
           <h4>Interested in catering an event?</h4>
           <Button
             role={ButtonRole.SECONDARY}
