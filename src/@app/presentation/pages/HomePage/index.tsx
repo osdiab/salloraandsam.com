@@ -70,13 +70,9 @@ const BannerActions = styled.section`
   }
 `;
 
-const ComingSoon = styled.h1`
-  text-align: center;
-`;
 export const HomePage: React.FC = () => (
   <>
     <main>
-      <ComingSoon>Great food coming soon!</ComingSoon>
       <BannerSection>
         <BannerContent>
           <BannerTitle>
