@@ -1,6 +1,7 @@
 import * as React from "react";
 import styled from "styled-components/macro";
 
+import dessertsImg from "@app/assets/images/cropped-desserts.jpg";
 import {
   Button,
   ButtonRole,
@@ -26,23 +27,38 @@ const SectionContent = styled.div`
   }
 `;
 
-const BannerSection = styled(Section)`
+const HeroSection = styled.section`
   background-color: ${props => props.theme.palette.primary};
+
   display: flex;
   align-items: center;
-  justify-content: center;
-`;
 
-const BannerContent = styled(SectionContent)`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  > *:not(:last-child) {
-    margin-bottom: ${spacingInRem.xl};
+  @media (max-width: ${props => props.theme.mediaQueries.sizes.tablet}) {
+    flex-direction: column;
+    padding: ${spacingInRem.l};
+    > img {
+      order: 1;
+      flex-grow: 0;
+      width: 80%;
+      border: 16px solid white;
+      margin-top: ${spacingInRem.xl};
+    }
   }
+
   @media (min-width: ${props => props.theme.mediaQueries.sizes.tablet}) {
-    padding-left: 300px;
+    > * {
+      flex: 1;
+    }
+    > :not(:last-child) {
+      margin-right: ${spacingInRem.xl};
+    }
+  }
+
+  h1 {
+    font-size: 3rem;
+    color: ${props => props.theme.palette.whiteText};
+
+    ${normalWeightMixin}
   }
 `;
 
@@ -52,16 +68,11 @@ const MenusGroup = styled.section`
   }
 `;
 
-const BannerTitle = styled.h1`
-  font-size: 3rem;
-  color: ${props => props.theme.palette.whiteText};
-
-  ${normalWeightMixin}
-`;
 const HighlightText = styled.span`
   color: ${props => props.theme.palette.primary};
 `;
-const BannerActions = styled.section`
+
+const HeroActions = styled.section`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -73,12 +84,11 @@ const BannerActions = styled.section`
 export const HomePage: React.FC = () => (
   <>
     <main>
-      <BannerSection>
-        <BannerContent>
-          <BannerTitle>
-            Authentic Syrian and Mediterranean Cuisine Since 1870
-          </BannerTitle>
-          <BannerActions>
+      <HeroSection>
+        <img src={dessertsImg} alt="Our delicious, authentic desserts" />
+        <article>
+          <h1>Authentic Syrian and Mediterranean Cuisine Since 1870</h1>
+          <HeroActions>
             <Button
               role={ButtonRole.PRIMARY_INVERTED}
               onClick={{
@@ -97,9 +107,9 @@ export const HomePage: React.FC = () => (
             >
               Cater your next gathering
             </Button>
-          </BannerActions>
-        </BannerContent>
-      </BannerSection>
+          </HeroActions>
+        </article>
+      </HeroSection>
       <Section id="food">
         <SectionContent>
           <h2>The heritage of Syria</h2>
