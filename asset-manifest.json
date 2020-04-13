@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/static/js/main.5ae82eea.chunk.js",
-    "main.js.map": "/static/js/main.5ae82eea.chunk.js.map",
+    "main.js": "/static/js/main.7a4ad7d2.chunk.js",
+    "main.js.map": "/static/js/main.7a4ad7d2.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.96bbe234.js",
     "runtime-main.js.map": "/static/js/runtime-main.96bbe234.js.map",
     "static/js/2.84caf68c.chunk.js": "/static/js/2.84caf68c.chunk.js",
     "static/js/2.84caf68c.chunk.js.map": "/static/js/2.84caf68c.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.b319b7d589afcdfdf7a4a80e68099549.js": "/precache-manifest.b319b7d589afcdfdf7a4a80e68099549.js",
+    "precache-manifest.70b1859a0bb34232e0081c7efb337d8d.js": "/precache-manifest.70b1859a0bb34232e0081c7efb337d8d.js",
     "service-worker.js": "/service-worker.js",
     "static/js/2.84caf68c.chunk.js.LICENSE.txt": "/static/js/2.84caf68c.chunk.js.LICENSE.txt",
     "static/media/cropped-desserts.jpg": "/static/media/cropped-desserts.fb1419c9.jpg",
@@ -16,6 +16,6 @@
   "entrypoints": [
     "static/js/runtime-main.96bbe234.js",
     "static/js/2.84caf68c.chunk.js",
-    "static/js/main.5ae82eea.chunk.js"
+    "static/js/main.7a4ad7d2.chunk.js"
   ]
 }
