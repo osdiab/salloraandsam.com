@@ -1,5 +1,5 @@
 import * as React from "react";
-import styled from "styled-components/macro";
+import styled, { css } from "styled-components/macro";
 
 import { ThemeInterface } from "@app/presentation/theme";
 import {
@@ -48,7 +48,7 @@ export interface ButtonProps {
 type StyledButtonProps = Pick<
   Required<ButtonProps>,
   "size" | "disabled" | "role"
->;
+> & { fullWidth?: boolean };
 
 function borderColor(params: {
   theme: ThemeInterface;
@@ -101,6 +101,12 @@ function fontColor(params: {
 }
 
 const StyledButton = styled.button<StyledButtonProps>`
+  ${props =>
+    props.fullWidth
+      ? css`
+          width: 100%;
+        `
+      : ""};
   display: inline-block;
   border: 2px solid;
   border-color: ${props => borderColor({ ...props, focus: false })};
@@ -125,9 +131,7 @@ const StyledButton = styled.button<StyledButtonProps>`
     text-decoration: underline;
   }
 `;
-const StyledDivButton = StyledButton.withComponent(styled.div`
-  width: 100%;
-`);
+const StyledDivButton = StyledButton.withComponent(styled.div``);
 
 function logInvalidTargetKind(onClick: never) {
   logger.error(
@@ -153,6 +157,9 @@ function buttonFontSize(size: ButtonProps["size"]) {
       return "1.4rem";
   }
 }
+const ButtonLink = styled(Link)`
+  display: inline-block;
+`;
 
 export const Button: React.FC<ButtonProps> = props => {
   const {
@@ -166,7 +173,7 @@ export const Button: React.FC<ButtonProps> = props => {
   switch (onClick.kind) {
     case ButtonTargetKind.LINK: {
       const linkContent = (
-        <StyledDivButton disabled={disabled} size={size} role={role}>
+        <StyledDivButton disabled={disabled} size={size} role={role} fullWidth>
           {children}
         </StyledDivButton>
       );
@@ -175,13 +182,13 @@ export const Button: React.FC<ButtonProps> = props => {
       }
 
       return (
-        <Link
+        <ButtonLink
           appearance={LinkAppearance.UNSTYLED}
           href={onClick.action.href}
           forceExternal={onClick.action.forceExternal || false}
         >
           {linkContent}
-        </Link>
+        </ButtonLink>
       );
     }
     case ButtonTargetKind.SUBMIT:

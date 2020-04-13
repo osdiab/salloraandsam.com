@@ -7,10 +7,7 @@ import {
   ButtonRole,
   ButtonTargetKind
 } from "@app/presentation/utility/Button";
-import {
-  normalWeightMixin,
-  boldWeightMixin
-} from "@app/presentation/theme/text";
+import { normalWeightMixin } from "@app/presentation/theme/text";
 import { spacingInRem } from "@app/presentation/theme/spacing";
 import { phoneNumber } from "@app/presentation/data";
 
@@ -68,7 +65,7 @@ const HeroSection = styled.section`
   }
 `;
 
-const MenusGroup = styled.section`
+const ButtonGroup = styled.section`
   > *:not(:last-child) {
     margin-right: ${spacingInRem.s};
   }
@@ -133,7 +130,7 @@ export const HomePage: React.FC = () => (
             experience the Sallora legacy.
           </p>
           <h3>Check out our menus</h3>
-          <MenusGroup>
+          <ButtonGroup>
             <Button
               role={ButtonRole.PRIMARY}
               onClick={{
@@ -158,7 +155,7 @@ export const HomePage: React.FC = () => (
             >
               Dessert Menu
             </Button>
-          </MenusGroup>
+          </ButtonGroup>
           <h4>Interested in catering an event?</h4>
           <Button
             role={ButtonRole.SECONDARY}

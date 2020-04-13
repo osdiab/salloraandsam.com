@@ -17,6 +17,7 @@ export enum LinkAppearance {
 }
 
 export interface LinkProps {
+  className?: string;
   href: string;
   appearance?: LinkAppearance;
   forceExternal?: boolean;
@@ -44,27 +45,22 @@ function logInvalidAppearance(appearance: never) {
   );
 }
 
-const AbsoluteLink: React.FC<LinkProps> = ({
-  href: to,
-  appearance,
-  children
-}) => {
-  const props = { href: to, children };
+const AbsoluteLink: React.FC<LinkProps> = ({ appearance, ...rest }) => {
   switch (appearance) {
     default:
       logInvalidAppearance(appearance);
     // fallthrough
     case undefined: // fallthrough
     case LinkAppearance.HYPERLINK:
-      return <HyperlinkA {...props} />;
+      return <HyperlinkA {...rest} />;
     case LinkAppearance.UNSTYLED:
-      return <UnstyledA {...props} />;
+      return <UnstyledA {...rest} />;
   }
 };
 
-const RelativeLink: React.FC<LinkProps> = ({ href, appearance, children }) => {
+const RelativeLink: React.FC<LinkProps> = ({ href, appearance, ...rest }) => {
   const linkProps: RouterLinkProps = {
-    children,
+    ...rest,
     smooth: true,
     to: href
   };
