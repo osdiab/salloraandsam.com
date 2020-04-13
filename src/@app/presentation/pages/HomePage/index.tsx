@@ -35,13 +35,13 @@ const HeroSection = styled.section`
 
   @media (max-width: ${props => props.theme.mediaQueries.sizes.tablet}) {
     flex-direction: column;
-    padding: ${spacingInRem.l};
     > img {
       order: 1;
       flex-grow: 0;
-      width: 80%;
-      border: 16px solid white;
-      margin-top: ${spacingInRem.xl};
+      width: 100%;
+    }
+    > article {
+      margin: ${spacingInRem.l};
     }
   }
 
@@ -79,8 +79,17 @@ const HeroActions = styled.section`
   display: flex;
   flex-direction: row;
   align-items: center;
-  > *:not(:last-child) {
-    margin-right: ${props => props.theme.spacingInRem.s};
+  @media (min-width: ${props => props.theme.mediaQueries.sizes.tablet}) {
+    > *:not(:last-child) {
+      margin-right: ${props => props.theme.spacingInRem.s};
+    }
+  }
+  @media (max-width: ${props => props.theme.mediaQueries.sizes.tablet}) {
+    flex-direction: column;
+    align-items: stretch;
+    > *:not(:last-child) {
+      margin-bottom: ${props => props.theme.spacingInRem.s};
+    }
   }
 `;
 

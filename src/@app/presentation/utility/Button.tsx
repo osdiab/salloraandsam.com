@@ -125,7 +125,9 @@ const StyledButton = styled.button<StyledButtonProps>`
     text-decoration: underline;
   }
 `;
-const StyledDivButton = StyledButton.withComponent(styled.div``);
+const StyledDivButton = StyledButton.withComponent(styled.div`
+  width: 100%;
+`);
 
 function logInvalidTargetKind(onClick: never) {
   logger.error(
