@@ -7,7 +7,10 @@ import {
   ButtonRole,
   ButtonTargetKind
 } from "@app/presentation/utility/Button";
-import { normalWeightMixin } from "@app/presentation/theme/text";
+import {
+  normalWeightMixin,
+  boldWeightMixin
+} from "@app/presentation/theme/text";
 import { spacingInRem } from "@app/presentation/theme/spacing";
 import { phoneNumber } from "@app/presentation/data";
 
@@ -33,6 +36,9 @@ const HeroSection = styled.section`
   display: flex;
   align-items: center;
 
+  > article {
+    padding: ${spacingInRem.m};
+  }
   @media (max-width: ${props => props.theme.mediaQueries.sizes.tablet}) {
     flex-direction: column;
     > img {
@@ -40,17 +46,14 @@ const HeroSection = styled.section`
       flex-grow: 0;
       width: 100%;
     }
-    > article {
-      margin: ${spacingInRem.l};
-    }
   }
 
   @media (min-width: ${props => props.theme.mediaQueries.sizes.tablet}) {
     > * {
-      flex: 1;
+      flex-basis: 50%;
     }
-    > :not(:last-child) {
-      margin-right: ${spacingInRem.xl};
+    > article {
+      padding: ${spacingInRem.xl};
     }
   }
 
