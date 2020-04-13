@@ -1,6 +1,7 @@
 import * as React from "react";
 import styled from "styled-components/macro";
 
+import { ReactComponent as FullLogoOrig } from "@app/assets/images/fullLogo.svg";
 import dessertsImg from "@app/assets/images/cropped-desserts.jpg";
 import {
   Button,
@@ -11,11 +12,20 @@ import { normalWeightMixin } from "@app/presentation/theme/text";
 import { spacingInRem } from "@app/presentation/theme/spacing";
 import { phoneNumber } from "@app/presentation/data";
 
+const FullLogo = styled(FullLogoOrig)`
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  padding: ${props => props.theme.spacingInRem.m};
+  padding-top: 0;
+`;
+
 const Section = styled.section`
   padding: ${props => props.theme.spacingInRem.m};
 
   @media (min-width: ${props => props.theme.mediaQueries.sizes.tablet}) {
-    padding: ${props => props.theme.spacingInRem.xxxl};
+    padding: 0 ${props => props.theme.spacingInRem.xxxl};
   }
 `;
 const SectionContent = styled.div`
@@ -27,21 +37,25 @@ const SectionContent = styled.div`
   }
 `;
 
+const DessertImage = styled.div`
+  background-image: url(${dessertsImg});
+  background-size: cover;
+`;
 const HeroSection = styled.section`
   background-color: ${props => props.theme.palette.primary};
 
   display: flex;
-  align-items: center;
+  align-items: stretch;
 
   > article {
     padding: ${spacingInRem.m};
   }
   @media (max-width: ${props => props.theme.mediaQueries.sizes.tablet}) {
     flex-direction: column;
-    > img {
+    > ${DessertImage} {
       order: 1;
       flex-grow: 0;
-      width: 100%;
+      height: 200px;
     }
   }
 
@@ -98,8 +112,9 @@ export const HomePage: React.FC = () => (
   <>
     <main>
       <HeroSection>
-        <img src={dessertsImg} alt="Our delicious, authentic desserts" />
+        <DessertImage />
         <article>
+          <FullLogo />
           <h1>Authentic Syrian and Mediterranean Cuisine Since 1870</h1>
           <HeroActions>
             <Button

@@ -1,8 +1,6 @@
 import * as React from "react";
 import styled from "styled-components/macro";
 
-import { PageSection } from "@app/presentation/utility/mixins/PageSection";
-import { ReactComponent as FullLogoOrig } from "@app/assets/images/fullLogo.svg";
 import { spacingInRem } from "@app/presentation/theme/spacing";
 import { boldWeightMixin } from "@app/presentation/theme/text";
 import {
@@ -39,15 +37,6 @@ const HeaderElem = styled.header`
   }
 `;
 
-const FullLogo = styled(FullLogoOrig)`
-  display: block;
-  width: 100%;
-  max-width: 400px;
-  margin: 0 auto;
-  padding: ${props => props.theme.spacingInRem.m};
-  padding-top: 0;
-`;
-
 export const Header: React.FC = () => (
   <HeaderElem>
     <AlertSection>
@@ -75,6 +64,5 @@ export const Header: React.FC = () => (
         </h6>
       </AlertSectionContent>
     </AlertSection>
-    <FullLogo />
   </HeaderElem>
 );
