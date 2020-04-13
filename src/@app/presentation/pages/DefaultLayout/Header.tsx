@@ -28,17 +28,9 @@ const AlertSectionContent = styled.section`
     margin-bottom: ${props => props.theme.spacingInRem.m};
   }
 `;
-const HeaderElem = styled.header`
-  margin-bottom: 0;
-  border: 0;
-
-  > *:not(:last-child) {
-    margin-bottom: ${props => props.theme.spacingInRem.m};
-  }
-`;
 
 export const Header: React.FC = () => (
-  <HeaderElem>
+  <React.Fragment>
     <AlertSection>
       <AlertSectionContent>
         <p>
@@ -46,6 +38,10 @@ export const Header: React.FC = () => (
           <b>we are currently open for takeout and delivery.</b> Once it is safe
           to do so, we will re-open for dine in service.
         </p>
+      </AlertSectionContent>
+    </AlertSection>
+    <AlertSection style={{ position: "sticky", top: "0" }}>
+      <AlertSectionContent>
         <Button
           role={ButtonRole.PRIMARY}
           onClick={{
@@ -64,5 +60,5 @@ export const Header: React.FC = () => (
         </h6>
       </AlertSectionContent>
     </AlertSection>
-  </HeaderElem>
+  </React.Fragment>
 );
