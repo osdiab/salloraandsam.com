@@ -55,8 +55,11 @@ const HeroSection = styled.section`
   }
 
   h1 {
-    font-size: 3rem;
+    font-size: 2rem;
     color: ${props => props.theme.palette.whiteText};
+    @media (min-width: ${props => props.theme.mediaQueries.sizes.tablet}) {
+      font-size: 3rem;
+    }
 
     ${normalWeightMixin}
   }
