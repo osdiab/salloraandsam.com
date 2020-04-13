@@ -122,12 +122,6 @@ export const HomePage: React.FC = () => (
           </HeroActions>
         </article>
       </HeroSection>
-      <Section id="food">
-        <SectionContent>
-          <h2>The heritage of Syria</h2>
-          <p></p>
-        </SectionContent>
-      </Section>
       <Section id="restaurant">
         <SectionContent>
           <h2>Join us for dinner</h2>
