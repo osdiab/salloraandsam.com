@@ -5,6 +5,11 @@ import { PageSection } from "@app/presentation/utility/mixins/PageSection";
 import { ReactComponent as FullLogoOrig } from "@app/assets/images/fullLogo.svg";
 import { spacingInRem } from "@app/presentation/theme/spacing";
 import { boldWeightMixin } from "@app/presentation/theme/text";
+import {
+  Button,
+  ButtonRole,
+  ButtonTargetKind
+} from "@app/presentation/utility/Button";
 
 const AlertSection = styled.section`
   background: #eee999;
@@ -20,6 +25,9 @@ const AlertSectionContent = styled.section`
   text-align: center;
   b {
     ${boldWeightMixin};
+  }
+  > *:not(:last-child) {
+    margin-bottom: ${props => props.theme.spacingInRem.m};
   }
 `;
 const HeaderElem = styled.header`
@@ -49,6 +57,22 @@ export const Header: React.FC = () => (
           <b>we are currently open for takeout and delivery.</b> Once it is safe
           to do so, we will re-open for dine in service.
         </p>
+        <Button
+          role={ButtonRole.PRIMARY}
+          onClick={{
+            kind: ButtonTargetKind.LINK,
+            action: {
+              href: "/menu/takeout.pdf",
+              target: "menu",
+              forceExternal: true
+            }
+          }}
+        >
+          Takeout Menu
+        </Button>
+        <h6>
+          Call us at <b>(708) 581-4239</b> to place your order!
+        </h6>
       </AlertSectionContent>
     </AlertSection>
     <FullLogo />

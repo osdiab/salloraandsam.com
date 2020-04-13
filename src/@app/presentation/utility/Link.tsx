@@ -21,6 +21,7 @@ export interface LinkProps {
   href: string;
   appearance?: LinkAppearance;
   forceExternal?: boolean;
+  target?: string;
 }
 
 const HyperlinkA = styled.a`

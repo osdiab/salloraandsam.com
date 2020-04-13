@@ -182,11 +182,7 @@ export const Button: React.FC<ButtonProps> = props => {
       }
 
       return (
-        <ButtonLink
-          appearance={LinkAppearance.UNSTYLED}
-          href={onClick.action.href}
-          forceExternal={onClick.action.forceExternal || false}
-        >
+        <ButtonLink appearance={LinkAppearance.UNSTYLED} {...onClick.action}>
           {linkContent}
         </ButtonLink>
       );
