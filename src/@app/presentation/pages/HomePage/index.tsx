@@ -66,8 +66,9 @@ const HeroSection = styled.section`
 `;
 
 const ButtonGroup = styled.section`
-  > *:not(:last-child) {
-    margin-right: ${spacingInRem.s};
+  margin: -${spacingInRem.xs};
+  > * {
+    margin: ${spacingInRem.xs};
   }
 `;
 
