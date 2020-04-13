@@ -108,9 +108,14 @@ const HeroActions = styled.section`
   }
 `;
 
+const PageBody = styled.main`
+  > * {
+    margin-bottom: ${props => props.theme.spacingInRem.xxxl};
+  }
+`;
 export const HomePage: React.FC = () => (
   <>
-    <main>
+    <PageBody>
       <HeroSection>
         <DessertImage />
         <article>
@@ -198,6 +203,6 @@ export const HomePage: React.FC = () => (
           </p>
         </SectionContent>
       </Section>
-    </main>
+    </PageBody>
   </>
 );
