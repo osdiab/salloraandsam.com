@@ -63,27 +63,27 @@ export const MenuPage: React.FC = () => {
         >
           Return Home
         </Button>
-        <MenuContainer>
-          <MenuIframe
-            title="Menu embed"
-            src={
-              process.env.NODE_ENV === "development" ||
-              navigator.userAgent === "ReactSnap"
-                ? pdfPath
-                : `https://drive.google.com/viewerng/viewer?${new URLSearchParams(
-                    {
-                      url: `${window.location.origin}/${pdfPath}`,
-                      pid: "explorer",
-                      efh: "false",
-                      a: "v",
-                      chrome: "false",
-                      embedded: "true"
-                    }
-                  ).toString()}`
-            }
-          />
-        </MenuContainer>
       </ReturnHomeP>
+      <MenuContainer>
+        <MenuIframe
+          title="Menu embed"
+          src={
+            process.env.NODE_ENV === "development" ||
+            navigator.userAgent === "ReactSnap"
+              ? pdfPath
+              : `https://drive.google.com/viewerng/viewer?${new URLSearchParams(
+                  {
+                    url: `${window.location.origin}/${pdfPath}`,
+                    pid: "explorer",
+                    efh: "false",
+                    a: "v",
+                    chrome: "false",
+                    embedded: "true"
+                  }
+                ).toString()}`
+          }
+        />
+      </MenuContainer>
     </main>
   );
 };
