@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useLocation } from "react-router-dom";
+import { useRouteMatch } from "react-router-dom";
 import styled from "styled-components/macro";
 
 import { NotFound } from "@app/presentation/pages/NotFound";
@@ -16,8 +16,8 @@ const ReturnHomeP = styled.p`
   margin: ${spacingInRem.m};
 `;
 export const MenuPage: React.FC = () => {
-  const location = useLocation();
-  const pdfPath = location.pathname + ".pdf";
+  const match = useRouteMatch<{ menu: string }>();
+  const pdfPath = `/menu/${match.params.menu}.pdf`;
   const [notFound, setNotFound] = React.useState<boolean>();
 
   React.useEffect(() => {
@@ -34,7 +34,7 @@ export const MenuPage: React.FC = () => {
     return () => {
       subscribed = false;
     };
-  }, [notFound, location, pdfPath]);
+  }, [notFound, pdfPath]);
 
   if (notFound === undefined) {
     return <p>Loading...</p>;

@@ -156,10 +156,7 @@ export const HomePage: React.FC = () => (
               role={ButtonRole.PRIMARY}
               onClick={{
                 kind: ButtonTargetKind.LINK,
-                action: {
-                  href: "/menu/main",
-                  forceExternal: true
-                }
+                action: { href: "/menu/main" }
               }}
             >
               Restaurant Menu
@@ -168,10 +165,7 @@ export const HomePage: React.FC = () => (
               role={ButtonRole.PRIMARY}
               onClick={{
                 kind: ButtonTargetKind.LINK,
-                action: {
-                  href: "/menu/desserts",
-                  forceExternal: true
-                }
+                action: { href: "/menu/desserts" }
               }}
             >
               Dessert Menu

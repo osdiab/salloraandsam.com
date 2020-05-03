@@ -51,11 +51,7 @@ export const Header: React.FC = () => {
               role={ButtonRole.PRIMARY}
               onClick={{
                 kind: ButtonTargetKind.LINK,
-                action: {
-                  href: "/menu/takeout",
-                  target: "menu",
-                  forceExternal: true
-                }
+                action: { href: "/menu/takeout" }
               }}
             >
               Takeout Menu
