@@ -53,7 +53,23 @@ export const MenuPage: React.FC = () => {
   return (
     <main>
       <MenuContainer>
-        <MenuIframe title="Menu embed" src={pdfPath} />
+        <MenuIframe
+          title="Menu embed"
+          src={
+            process.env.NODE_ENV === "development"
+              ? pdfPath
+              : `https://drive.google.com/viewerng/viewer?${new URLSearchParams(
+                  {
+                    url: `${window.location.origin}/${pdfPath}`,
+                    pid: "explorer",
+                    efh: "false",
+                    a: "v",
+                    chrome: "false",
+                    embedded: "true"
+                  }
+                ).toString()}`
+          }
+        />
       </MenuContainer>
       <ReturnHomeP>
         <Button
