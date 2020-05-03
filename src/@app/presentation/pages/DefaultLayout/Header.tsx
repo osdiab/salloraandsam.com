@@ -1,5 +1,6 @@
 import * as React from "react";
 import styled from "styled-components/macro";
+import { useLocation } from "react-router-dom";
 
 import { spacingInRem } from "@app/presentation/theme/spacing";
 import { boldWeightMixin } from "@app/presentation/theme/text";
@@ -29,36 +30,42 @@ const AlertSectionContent = styled.section`
   }
 `;
 
-export const Header: React.FC = () => (
-  <React.Fragment>
-    <AlertSection>
-      <AlertSectionContent>
-        <p>
-          Due to coronavirus,{" "}
-          <b>we are currently open for takeout and delivery.</b> Once it is safe
-          to do so, we will re-open for dine in service.
-        </p>
-      </AlertSectionContent>
-    </AlertSection>
-    <AlertSection style={{ position: "sticky", top: "0" }}>
-      <AlertSectionContent>
-        <Button
-          role={ButtonRole.PRIMARY}
-          onClick={{
-            kind: ButtonTargetKind.LINK,
-            action: {
-              href: "/menu/takeout.pdf",
-              target: "menu",
-              forceExternal: true
-            }
-          }}
-        >
-          Takeout Menu
-        </Button>
-        <h6>
-          Call us at <b>(708) 581-4239</b> to place your order!
-        </h6>
-      </AlertSectionContent>
-    </AlertSection>
-  </React.Fragment>
-);
+export const Header: React.FC = () => {
+  const location = useLocation();
+  const showMenuButton = !location.pathname.includes("/menu/");
+  return (
+    <React.Fragment>
+      <AlertSection style={{ paddingBottom: 0 }}>
+        <AlertSectionContent>
+          <p>
+            Due to coronavirus,{" "}
+            <b>we are currently open for takeout and delivery.</b> Once it is
+            safe to do so, we will re-open for dine in service.
+          </p>
+        </AlertSectionContent>
+      </AlertSection>
+      <AlertSection style={{ position: "sticky", top: "0" }}>
+        <AlertSectionContent>
+          {showMenuButton && (
+            <Button
+              role={ButtonRole.PRIMARY}
+              onClick={{
+                kind: ButtonTargetKind.LINK,
+                action: {
+                  href: "/menu/takeout",
+                  target: "menu",
+                  forceExternal: true
+                }
+              }}
+            >
+              Takeout Menu
+            </Button>
+          )}
+          <h6>
+            Call us at <b>(708) 581-4239</b> to place your order!
+          </h6>
+        </AlertSectionContent>
+      </AlertSection>
+    </React.Fragment>
+  );
+};
