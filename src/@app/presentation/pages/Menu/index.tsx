@@ -3,7 +3,11 @@ import { useRouteMatch } from "react-router-dom";
 import styled from "styled-components/macro";
 
 import { NotFound } from "@app/presentation/pages/NotFound";
-import { Button, ButtonTargetKind } from "@app/presentation/utility/Button";
+import {
+  Button,
+  ButtonTargetKind,
+  ButtonRole
+} from "@app/presentation/utility/Button";
 import { spacingInRem } from "@app/presentation/theme/spacing";
 
 const MenuContainer = styled.div`
@@ -52,32 +56,33 @@ export const MenuPage: React.FC = () => {
 
   return (
     <main>
-      <MenuContainer>
-        <MenuIframe
-          title="Menu embed"
-          src={
-            process.env.NODE_ENV === "development" ||
-            navigator.userAgent === "ReactSnap"
-              ? pdfPath
-              : `https://drive.google.com/viewerng/viewer?${new URLSearchParams(
-                  {
-                    url: `${window.location.origin}/${pdfPath}`,
-                    pid: "explorer",
-                    efh: "false",
-                    a: "v",
-                    chrome: "false",
-                    embedded: "true"
-                  }
-                ).toString()}`
-          }
-        />
-      </MenuContainer>
       <ReturnHomeP>
         <Button
           onClick={{ kind: ButtonTargetKind.LINK, action: { href: "/" } }}
+          role={ButtonRole.SECONDARY}
         >
           Return Home
         </Button>
+        <MenuContainer>
+          <MenuIframe
+            title="Menu embed"
+            src={
+              process.env.NODE_ENV === "development" ||
+              navigator.userAgent === "ReactSnap"
+                ? pdfPath
+                : `https://drive.google.com/viewerng/viewer?${new URLSearchParams(
+                    {
+                      url: `${window.location.origin}/${pdfPath}`,
+                      pid: "explorer",
+                      efh: "false",
+                      a: "v",
+                      chrome: "false",
+                      embedded: "true"
+                    }
+                  ).toString()}`
+            }
+          />
+        </MenuContainer>
       </ReturnHomeP>
     </main>
   );
