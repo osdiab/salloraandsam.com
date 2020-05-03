@@ -6,9 +6,16 @@ import { NotFound } from "@app/presentation/pages/NotFound";
 import { Button, ButtonTargetKind } from "@app/presentation/utility/Button";
 import { spacingInRem } from "@app/presentation/theme/spacing";
 
-const MenuIframe = styled.iframe`
+const MenuContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
   width: 100%;
   min-height: 100vh;
+`;
+
+const MenuIframe = styled.iframe`
+  flex-grow: 1;
 `;
 const ReturnHomeP = styled.p`
   display: flex;
@@ -45,7 +52,9 @@ export const MenuPage: React.FC = () => {
 
   return (
     <main>
-      <MenuIframe title="Menu embed" src={pdfPath} />
+      <MenuContainer>
+        <MenuIframe title="Menu embed" src={pdfPath} />
+      </MenuContainer>
       <ReturnHomeP>
         <Button
           onClick={{ kind: ButtonTargetKind.LINK, action: { href: "/" } }}
