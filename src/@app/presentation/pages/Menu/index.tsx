@@ -56,8 +56,8 @@ export const MenuPage: React.FC = () => {
         <MenuIframe
           title="Menu embed"
           src={
-            process.env.NODE_ENV === "development" &&
-            navigator.userAgent !== "ReactSnap"
+            process.env.NODE_ENV === "development" ||
+            navigator.userAgent === "ReactSnap"
               ? pdfPath
               : `https://drive.google.com/viewerng/viewer?${new URLSearchParams(
                   {
