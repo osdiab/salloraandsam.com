@@ -58,8 +58,23 @@ export const MenuPage: React.FC = () => {
     <main>
       <ReturnHomeP>
         <Button
+          onClick={{
+            kind: ButtonTargetKind.LINK,
+            action: {
+              href: pdfPath,
+              forceExternal: true,
+              target: `sallora-${match.params.menu}-menu`
+            }
+          }}
+          role={ButtonRole.PRIMARY}
+        >
+          View the menu
+        </Button>
+      </ReturnHomeP>
+      <ReturnHomeP>
+        <Button
           onClick={{ kind: ButtonTargetKind.LINK, action: { href: "/" } }}
-          role={ButtonRole.SECONDARY}
+          role={ButtonRole.TEXT_ONLY}
         >
           Return Home
         </Button>
