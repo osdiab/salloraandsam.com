@@ -54,7 +54,7 @@ export const Header: React.FC = () => {
                 action: { href: "/menu/takeout" }
               }}
             >
-              Takeout Menu
+              Takeout &amp; Delivery Menu
             </Button>
           )}
           <h6>
