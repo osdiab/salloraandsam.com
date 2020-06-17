@@ -60,6 +60,7 @@ export const Header: React.FC = () => {
           <h6>
             Call us at <b>(708) 581-4239</b> to place your order!
           </h6>
+          <p>We&rsquo;re open everyday from 2pm–11pm.</p>
         </AlertSectionContent>
       </AlertSection>
     </React.Fragment>
