@@ -79,13 +79,6 @@ const HeroSection = styled.section`
   }
 `;
 
-const ButtonGroup = styled.section`
-  margin: -${spacingInRem.xs};
-  > * {
-    margin: ${spacingInRem.xs};
-  }
-`;
-
 const HighlightText = styled.span`
   color: ${props => props.theme.palette.primary};
 `;
@@ -150,27 +143,15 @@ export const HomePage: React.FC = () => (
             Come to our restaurant conveniently located in Bridgeview and
             experience the Sallora legacy.
           </p>
-          <h3>Check out our menus</h3>
-          <ButtonGroup>
-            <Button
-              role={ButtonRole.PRIMARY}
-              onClick={{
-                kind: ButtonTargetKind.LINK,
-                action: { href: "/menu/main.pdf", forceExternal: true }
-              }}
-            >
-              Restaurant Menu
-            </Button>
-            <Button
-              role={ButtonRole.PRIMARY}
-              onClick={{
-                kind: ButtonTargetKind.LINK,
-                action: { href: "/menu/desserts.pdf", forceExternal: true }
-              }}
-            >
-              Dessert Menu
-            </Button>
-          </ButtonGroup>
+          <Button
+            role={ButtonRole.PRIMARY}
+            onClick={{
+              kind: ButtonTargetKind.LINK,
+              action: { href: "/menu/main.pdf", forceExternal: true }
+            }}
+          >
+            View the Menu
+          </Button>
           <h4>Interested in catering an event?</h4>
           <Button
             role={ButtonRole.SECONDARY}

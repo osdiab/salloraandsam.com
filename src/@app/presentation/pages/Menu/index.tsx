@@ -1,8 +1,6 @@
 import * as React from "react";
-import { useRouteMatch } from "react-router-dom";
 import styled from "styled-components/macro";
 
-import { NotFound } from "@app/presentation/pages/NotFound";
 import {
   Button,
   ButtonTargetKind,
@@ -21,64 +19,41 @@ const MenuContainer = styled.div`
 const MenuIframe = styled.iframe`
   flex-grow: 1;
 `;
-const ReturnHomeP = styled.p`
+const ButtonsSection = styled.section`
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   margin: ${spacingInRem.m};
+  > * {
+    margin: ${spacingInRem.s}
+  }
 `;
 export const MenuPage: React.FC = () => {
-  const match = useRouteMatch<{ menu: string }>();
-  const pdfPath = `/menu/${match.params.menu}.pdf`;
-  const [notFound, setNotFound] = React.useState<boolean>();
-
-  React.useEffect(() => {
-    let subscribed = true;
-    if (notFound !== undefined) {
-      return;
-    }
-    fetch(pdfPath).then(res => {
-      if (!subscribed) {
-        return;
-      }
-      setNotFound(res.headers.get("Content-Type") !== "application/pdf");
-    });
-    return () => {
-      subscribed = false;
-    };
-  }, [notFound, pdfPath]);
-
-  if (notFound === undefined) {
-    return <p>Loading...</p>;
-  }
-  if (notFound) {
-    return <NotFound />;
-  }
+  const pdfPath = `/menu/main.pdf`;
 
   return (
     <main>
-      <ReturnHomeP>
-        <Button
-          onClick={{
-            kind: ButtonTargetKind.LINK,
-            action: {
-              href: pdfPath,
-              forceExternal: true,
-              target: `sallora-${match.params.menu}-menu`
-            }
-          }}
-          role={ButtonRole.PRIMARY}
-        >
-          View the menu
-        </Button>
-      </ReturnHomeP>
-      <ReturnHomeP>
+      <ButtonsSection>
         <Button
           onClick={{ kind: ButtonTargetKind.LINK, action: { href: "/" } }}
           role={ButtonRole.TEXT_ONLY}
         >
           Return Home
         </Button>
-      </ReturnHomeP>
+        <Button
+          onClick={{
+            kind: ButtonTargetKind.LINK,
+            action: {
+              href: pdfPath,
+              forceExternal: true,
+              target: `sallora-menu`
+            }
+          }}
+          role={ButtonRole.PRIMARY}
+        >
+          Open the menu in a separate tab
+        </Button>
+      </ButtonsSection>
       <MenuContainer>
         <MenuIframe
           title="Menu embed"
