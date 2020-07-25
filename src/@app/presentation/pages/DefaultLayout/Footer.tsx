@@ -40,7 +40,12 @@ export const Footer: React.FC = () => (
         </Link>{" "}
         in Bridgeview, IL.
       </h5>
-      <p>We&rsquo;re open everyday from 2pm–11pm.</p>
+      <h5>Our store hours</h5>
+      <p>We are open everyday.</p>
+      <p>
+        Sunday to Thursday: 11:30AM–11PM<br />
+        Friday and Saturday: 11:30AM–midnight
+      </p>
 
       <h5>Call us to ask about catering or delivery.</h5>
       <h6>{phoneNumber}</h6>
