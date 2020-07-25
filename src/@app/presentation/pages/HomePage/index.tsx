@@ -102,6 +102,9 @@ const HeroActions = styled.section`
 `;
 
 const PageBody = styled.main`
+  b {
+    font-weight: bold;
+  }
   > * {
     margin-bottom: ${props => props.theme.spacingInRem.xxxl};
   }
@@ -152,16 +155,14 @@ export const HomePage: React.FC = () => (
           >
             View the Menu
           </Button>
-          <h4>Interested in catering an event?</h4>
-          <Button
-            role={ButtonRole.SECONDARY}
-            onClick={{
-              kind: ButtonTargetKind.LINK,
-              action: { href: "#cater" }
-            }}
-          >
-            Learn more
-          </Button>
+        </SectionContent>
+      </Section>
+      <Section>
+        <SectionContent>
+          <h2>We also serve takeout and delivery.</h2>
+          <p>
+            Call us at <b>(708) 581-4239</b> to place your order!
+          </p>
         </SectionContent>
       </Section>
       <Section id="cater">
